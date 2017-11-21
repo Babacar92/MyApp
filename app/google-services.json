@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "489484163933",
+    "firebase_url": "https://simpleblog-cf5a8.firebaseio.com",
+    "project_id": "simpleblog-cf5a8",
+    "storage_bucket": "simpleblog-cf5a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489484163933:android:ec7a95b21e9b1ee2",
+        "android_client_info": {
+          "package_name": "com.example.babacarkadams.simpleblog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489484163933-7daqb2qsgqmifechr8hdhkr4u26b3khg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.babacarkadams.simpleblog",
+            "certificate_hash": "9f938a5d37217f427b95df5493d9df14c613d7a2"
+          }
+        },
+        {
+          "client_id": "489484163933-fdm0ci1ml177npr7vg4tade05um79ao4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkRGPSCvxQhMhN8WNS8W9mShGOg5YNkfk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489484163933-fdm0ci1ml177npr7vg4tade05um79ao4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489484163933:android:dd1332465b9334ee",
+        "android_client_info": {
+          "package_name": "com.example.babacarkadams.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489484163933-k8rfcllnucbbv4rtf6m94blc74vhvnds.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.babacarkadams.myapp",
+            "certificate_hash": "9f938a5d37217f427b95df5493d9df14c613d7a2"
+          }
+        },
+        {
+          "client_id": "489484163933-fdm0ci1ml177npr7vg4tade05um79ao4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkRGPSCvxQhMhN8WNS8W9mShGOg5YNkfk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489484163933-fdm0ci1ml177npr7vg4tade05um79ao4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

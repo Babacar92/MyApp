@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.babacarkadams.myapp.PostActivity">
+
+
+    <ImageButton
+        android:id="@+id/imageselect"
+        android:layout_width="394dp"
+        android:layout_height="214dp"
+        app:layout_constraintBottom_toTopOf="@+id/titleField"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_add_white_24dp"
+        tools:layout_editor_absoluteX="-4dp" />
+
+    <EditText
+        android:id="@+id/titleField"
+
+        android:layout_width="376dp"
+        android:layout_height="84dp"
+        android:layout_margin="50dp"
+        android:background="@drawable/input_outline"
+        android:ems="10"
+        android:hint="POST TITLE"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/descField"
+        app:layout_constraintTop_toBottomOf="@+id/imageselect"
+        tools:layout_editor_absoluteX="4dp" />
+
+    <EditText
+        android:id="@+id/descField"
+        android:layout_width="374dp"
+        android:layout_height="82dp"
+        android:background="@drawable/input_outline"
+        android:ems="10"
+        android:hint="POST DESCRIPTION"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/submitBtn"
+        app:layout_constraintTop_toBottomOf="@+id/titleField"
+        tools:layout_editor_absoluteX="5dp" />
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="394dp"
+        android:layout_height="78dp"
+        android:background="@color/colorPrimary"
+        android:text="Button"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descField"
+        tools:layout_editor_absoluteX="2dp" />
+
+</android.support.constraint.ConstraintLayout>

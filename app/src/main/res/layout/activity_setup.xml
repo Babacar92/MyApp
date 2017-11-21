@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.babacarkadams.myapp.SetupActivity">
+
+    <ImageButton
+        android:id="@+id/setupimageBtn"
+        android:layout_width="101dp"
+        android:layout_height="159dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_dark_disabled"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <EditText
+        android:id="@+id/setupNameField"
+        android:layout_width="324dp"
+        android:layout_height="66dp"
+        android:ems="10"
+        android:hint="ENTER YOUR DISPLAY NAME"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <Button
+        android:id="@+id/setupSubmitBtn"
+        android:layout_width="234dp"
+        android:layout_height="72dp"
+        android:text="Final Setup"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="389dp" />
+</android.support.constraint.ConstraintLayout>
