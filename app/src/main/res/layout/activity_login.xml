@@ -35,12 +35,12 @@
         android:layout_width="187dp"
         android:layout_height="55dp"
         android:text="LOGIN"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/btnCreateAccount"
         app:layout_constraintTop_toBottomOf="@+id/loginPasswordField"
         tools:layout_editor_absoluteX="99dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnCreateAccount"
         android:layout_width="365dp"
         android:layout_height="58dp"
         android:text="Need new Account"

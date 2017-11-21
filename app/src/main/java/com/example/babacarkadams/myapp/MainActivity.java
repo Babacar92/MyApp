@@ -33,24 +33,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mAuth=FirebaseAuth.getInstance();
-        mAuthListener=new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if (firebaseAuth.getCurrentUser()==null){
-
+        mAuth = FirebaseAuth.getInstance();
+//        mAuthListener = new FirebaseAuth.AuthStateListener() {
+//            @Override
+//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+//                if (firebaseAuth.getCurrentUser() == null) {
+//
 //                    Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
-  //                  loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-    //                startActivity(loginIntent);
-                }
+//                    loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                    startActivity(loginIntent);
+//                }
+//
+//            }
+//        };
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Blog");
+        mDatabaseUsers = FirebaseDatabase.getInstance().getReference().child("Users");
 
-            }
-        };
-    mDatabase= FirebaseDatabase.getInstance().getReference().child("Blog");
-    mDatabaseUsers =FirebaseDatabase.getInstance().getReference().child("Users");
-
-    mDatabaseUsers.keepSynced(true);
-    mDatabase.keepSynced(true);
+        mDatabaseUsers.keepSynced(true);
+        mDatabase.keepSynced(true);
 
         mBlogList = (RecyclerView) findViewById(R.id.blog_list);
         mBlogList.setHasFixedSize(true);
@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
 
- //       checkUserExist();
-        mAuth.addAuthStateListener(mAuthListener);
+        //       checkUserExist();
+//        mAuth.addAuthStateListener(mAuthListener);
 
         FirebaseRecyclerAdapter<Blog, BlogViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Blog, BlogViewHolder>(
 
@@ -85,48 +85,52 @@ public class MainActivity extends AppCompatActivity {
         };
         mBlogList.setAdapter(firebaseRecyclerAdapter);
     }
-        //}
-        //mBlogList.setAdapter(firebaseRecyclerAdapter);
+
     //}
-    private void checkUserExist() {
-        final String user_id =mAuth.getCurrentUser().getUid();
-        mDatabaseUsers.addValueEventListener(new ValueEventListener(){
-            @Override
-            public void  onDataChange(DataSnapshot dataSnapshot){
+    //mBlogList.setAdapter(firebaseRecyclerAdapter);
+    //}
+//    private void checkUserExist() {
+//        final String user_id = mAuth.getCurrentUser().getUid();
+//        mDatabaseUsers.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//
+//                if (!dataSnapshot.hasChild(user_id)) {
+//                    Intent setupIntent = new Intent(MainActivity.this, SetupActivity.class);
+//                    setupIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                    startActivity(setupIntent);
+//
+//
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
 
-                if (!dataSnapshot.hasChild(user_id)){
-                    Intent setupIntent = new Intent(MainActivity.this, SetupActivity.class);
-                    setupIntent .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(setupIntent );
 
-
-                }
-
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError){
-
-            }
-        });
-    }
-
-
-    public static class BlogViewHolder extends RecyclerView.ViewHolder{
+    public static class BlogViewHolder extends RecyclerView.ViewHolder {
         View mView;
-        public BlogViewHolder(View itemView){
+
+        public BlogViewHolder(View itemView) {
             super(itemView);
 
-            mView= itemView;
+            mView = itemView;
 
         }
-        public void setTitle(String title){
-            TextView post_title= (TextView) mView.findViewById(R.id.post_title);
+
+        public void setTitle(String title) {
+            TextView post_title = (TextView) mView.findViewById(R.id.post_title);
             post_title.setText(title);
 
         }
 
-        public void setDesc(String desc){
-            TextView post_desc= (TextView) mView.findViewById(R.id.post_text);
+        public void setDesc(String desc) {
+            TextView post_desc = (TextView) mView.findViewById(R.id.post_text);
             post_desc.setText(desc);
 
         }
@@ -135,22 +139,28 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if( item.getItemId() == R.id.action_add){
+        if (item.getItemId() == R.id.action_add) {
             startActivity(new Intent(MainActivity.this, PostActivity.class));
         }
-        if (item.getItemId() == R.id.action_logout){
+        if (item.getItemId() == R.id.action_logout) {
             logOut();
+            if (mAuth.getCurrentUser() == null) {
+                Intent mainIntent = new Intent(MainActivity.this, LoginActivity.class);
+                mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(mainIntent);
+                this.finish();
+            }
         }
         return super.onOptionsItemSelected(item);
     }
 
     private void logOut() {
-    mAuth.signOut();
+        mAuth.signOut();
     }
 }
