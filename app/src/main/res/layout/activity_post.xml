@@ -9,12 +9,12 @@
 
     <ImageButton
         android:id="@+id/imageselect"
-        android:layout_width="394dp"
-        android:layout_height="214dp"
+        android:layout_width="368dp"
+        android:layout_height="227dp"
         app:layout_constraintBottom_toTopOf="@+id/titleField"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_add_white_24dp"
-        tools:layout_editor_absoluteX="-4dp" />
+        app:srcCompat="@mipmap/ic_add_a_photo_white_24dp"
+        tools:layout_editor_absoluteX="8dp" />
 
     <EditText
         android:id="@+id/titleField"
@@ -28,27 +28,31 @@
         android:inputType="textPersonName"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/descField"
-        app:layout_constraintTop_toBottomOf="@+id/imageselect"
-        tools:layout_editor_absoluteX="4dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageselect" />
 
     <EditText
         android:id="@+id/descField"
         android:layout_width="374dp"
-        android:layout_height="82dp"
+        android:layout_height="70dp"
         android:background="@drawable/input_outline"
         android:ems="10"
         android:hint="POST DESCRIPTION"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/submitBtn"
-        app:layout_constraintTop_toBottomOf="@+id/titleField"
-        tools:layout_editor_absoluteX="5dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleField" />
 
     <Button
         android:id="@+id/submitBtn"
         android:layout_width="394dp"
         android:layout_height="78dp"
         android:background="@color/colorPrimary"
-        android:text="Button"
+        android:text="Poster"
+
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descField"
