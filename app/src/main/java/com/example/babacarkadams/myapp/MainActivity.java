@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseReference;
 
     private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
 
     FirebaseRecyclerAdapter mFirebaseAdapter;
 
@@ -66,12 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("Main", " ----- ----- pupulate view holder");
                 mViewHolder.bindBlog(model);
             }
-
-//            @Override
-//            protected void populateViewHolder(FirebaseBlogViewHolder viewHolder, Blog model, int position) {
-//                Log.i("Main", " ----- ----- pupulate view holder");
-//                viewHolder.bindBlog(model);
-//            }
         };
 
         mBlogRecyclerView.setHasFixedSize(true);
