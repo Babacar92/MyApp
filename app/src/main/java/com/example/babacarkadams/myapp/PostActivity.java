@@ -93,7 +93,6 @@ public class PostActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Uri downloadUrl = taskSnapshot.getDownloadUrl();
-
                     DatabaseReference newPost = mDatabaseRef.child("blogs").push();
 //                    String key = newPost.getKey();
                     newPost.child("title").setValue(title_val);

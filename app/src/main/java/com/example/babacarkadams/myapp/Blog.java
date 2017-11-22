@@ -6,17 +6,15 @@ package com.example.babacarkadams.myapp;
 
 public class Blog {
 
-
+    public String title , desc, image;
 
     public Blog(String title, String desc, String image) {
         this.title = title;
         this.desc = desc;
         this.image = image;
     }
-    public Blog(){
 
-
-    }
+    public Blog(){}
 
     public String getImage() {
         return image;
@@ -25,8 +23,6 @@ public class Blog {
     public void setImage(String image) {
         this.image = image;
     }
-
-    private String title , desc, image;
 
     public String getTitle() {
         return title;
